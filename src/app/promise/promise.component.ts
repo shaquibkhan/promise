@@ -7,10 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PromiseComponent implements OnInit {
 
+  promiseVal:any;
+
+  dell =[{
+    name : 'Dell',
+    HardDisk : '2TB',
+    color : 'Black'
+  }]
+
+  hp =[{
+    name : 'Dell',
+    HardDisk : '2TB',
+    color : 'Black'
+  }]
+
+  notAvailable =[{
+    Status: 'Not Purchased'
+  }]
 
   constructor() { }
 
- 
   dellAvailable(){
   return true
   }
@@ -19,28 +35,6 @@ export class PromiseComponent implements OnInit {
   return false
   }
  
-  promiseVal;
-
-  dell ={
-    name : 'Dell',
-    HardDisk : '2TB',
-    color : 'Black'
-  }
-
-  hp ={
-    name : 'Dell',
-    HardDisk : '2TB',
-    color : 'Black'
-  }
-
-  notAvailable ={
-    name : 'Dell',
-    HardDisk : '2TB',
-    color : 'Black'
-  }
- 
-
-
   ngOnInit(): void {
   let buyLaptop = new Promise((resolve,reject)=>{
     if(this.dellAvailable()){
@@ -62,10 +56,10 @@ export class PromiseComponent implements OnInit {
 
   buyLaptop.then(res=>{
     console.log("then code=>", res);
-    this.promiseVal = res;
+     this.promiseVal = res;
   }).catch(res=>{
     console.log("catch code=>", res);
-    this.promiseVal = res;
+     this.promiseVal = res;
   })
   }
 

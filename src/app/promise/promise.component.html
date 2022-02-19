@@ -1,1 +1,7 @@
-<h2>{{promiseVal}}</h2>
+<h2 *ngFor="let promise of promiseVal">
+    Name: {{promise.name}}
+    <br>
+    Hard Disk: {{promise.HardDisk}}
+    <br>
+    Color: {{promise.color}}
+</h2>
